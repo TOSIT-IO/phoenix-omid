@@ -135,8 +135,6 @@
     </scm>
 
     <properties>
-
-
         <hbase1.artifactId.suffix>hbase1.x</hbase1.artifactId.suffix>
         <hbase2.artifactId.suffix>hbase2.x</hbase2.artifactId.suffix>
 
@@ -144,21 +142,20 @@
         <shims2.artifactId>omid-hbase-shims-${hbase2.artifactId.suffix}</shims2.artifactId>
 
         <!-- hbase-1 profile props are here and not in profile section to work better with intelij-->
-        <shims.artifactId>${shims1.artifactId}</shims.artifactId>
-        <shims.exclude.artifactId>${shims2.artifactId}</shims.exclude.artifactId>
-        <java.version>1.7</java.version>
-        <hadoop.version>${hadoop1.version}</hadoop.version>
-        <hbase.version>${hbase1.version}</hbase.version>
-        <shims.module>hbase-1</shims.module>
-        <hbase.artifactId.suffix>${hbase1.artifactId.suffix}</hbase.artifactId.suffix>
-        <hbase.exclude.artifactId.suffix>${hbase2.artifactId.suffix}</hbase.exclude.artifactId.suffix>
-
+        <shims.artifactId>${shims2.artifactId}</shims.artifactId>
+        <shims.exclude.artifactId>${shims1.artifactId}</shims.exclude.artifactId>
+        <shims.module>hbase-2</shims.module>
+        <shims.artifactId>${shims2.artifactId}</shims.artifactId>
+        <java.version>1.8</java.version>
+        <hadoop.version>${hadoop2.version}</hadoop.version>
+        <hbase.version>${hbase2.version}</hbase.version>
+        <hbase.artifactId.suffix>${hbase2.artifactId.suffix}</hbase.artifactId.suffix>
+        <hbase.exclude.artifactId.suffix>${hbase1.artifactId.suffix}</hbase.exclude.artifactId.suffix>
 
         <!-- Basic properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- 3rd-Party Library Versioning -->
-        <hbase1.version>1.3.1</hbase1.version>
         <hbase2.version>2.1.10-1.0</hbase2.version>
         <hadoop1.version>2.7.5</hadoop1.version>
         <hadoop2.version>3.1.1-0.0</hadoop2.version>
@@ -567,32 +564,6 @@
             </build>
 
         </profile>
-        <profile>
-            <id>hbase-1</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-
-            </properties>
-        </profile>
-
-        <profile>
-            <id>hbase-2</id>
-            <properties>
-                <shims.artifactId>${shims2.artifactId}</shims.artifactId>
-                <shims.exclude.artifactId>${shims1.artifactId}</shims.exclude.artifactId>
-                <shims.module>hbase-2</shims.module>
-                <shims.artifactId>${shims2.artifactId}</shims.artifactId>
-                <java.version>1.8</java.version>
-                <hadoop.version>${hadoop2.version}</hadoop.version>
-                <hbase.version>${hbase2.version}</hbase.version>
-                <hbase.artifactId.suffix>${hbase2.artifactId.suffix}</hbase.artifactId.suffix>
-                <hbase.exclude.artifactId.suffix>${hbase1.artifactId.suffix}</hbase.exclude.artifactId.suffix>
-
-            </properties>
-        </profile>
-
         <profile>
             <id>owasp-dependency-check</id>
             <build>
